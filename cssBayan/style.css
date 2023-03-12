@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Fredoka+One&display=swap');
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-height: 1500px;
+    background-color: rgb(80, 149, 240);
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+.bayan__title{ /*Главный заголовок*/
+    display: flex;
+    align-items: center;
+
+
+    font-family: 'Fredoka One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    margin-bottom: 15px;
+
+    color: #fef722;
+}
+
+.bayanBlock{ /*Блок со всем содержимым*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 500px;
+    background: white;
+    border: 5px solid black;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.bayanBlock__item{/*Элементы блока*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 3px solid rgb(73, 72, 72);
+    width: 400px;
+    padding: 0 5px 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.title{
+    display: flex;
+}
+
+.bayanBlock__item__title{ /*Заголовок блоков*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Acme', sans-serif;  
+    font-weight: 400;
+    font-size: 25px; 
+
+    cursor: pointer;
+}
+
+
+.icon{ /*плюс*/
+    opacity: 0;
+    font-size: 25px;
+    font-weight: 600;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    transform: rotate( 0deg);
+}
+ 
+.bayanBlock__item__input{
+    appearance: none; /*св-во скрывает input*/
+}
+
+.bayanBlock__item__img{/*Мем блок*/
+    text-align: center;
+    overflow: hidden;
+    height: 0;
+    transition: .7s;
+    opacity: 0;
+}
+
+.mem{ /*мем фото*/
+    height: 200px;
+}
+
+/* Показ скрытого контента */
+
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__img {
+    display: block; 
+} /*Показ контента при нажатии*/ 
+
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__title{ /*изменение цвета шрифта при раскрытии блока*/
+    color:rgb(80, 149, 240);
+} 
+
+.bayanBlock:hover
+.icon{ /*Появление креста при наведении*/
+ opacity: 1;
+ transition: opacity 1s;
+} 
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__title >.icon{
+   transform: rotate(45deg); /* Изменение креста при открытии */
+}
+
+.bayanBlock__item__input:hover ~.bayanBlock__item__title >.icon{
+    transform: rotate(45deg); /* Изменение креста при наведении */
+ }
+
+.mem:active{ /*Наложение фона на картинку*/
+   opacity: 0.3;
+   transition: opacity 0.5s;
+}
+
+.bayanBlock__item:hover>.bayanBlock__item__img{
+    display: block; /*показ картинки при нведении*/
+    
+}
+
+.bayanBlock__item__input:checked~.bayanBlock__item__img {
+    opacity: 1;
+    height: 200px;
+}
+
+.bayanBlock__item__input:hover~.bayanBlock__item__img {
+    opacity: 1;
+    height: 200px;
+}
+
+
+@media screen and (min-width:820px) and (max-width:1180px) {
+  
+.bayanBlock__item{/*Элементы блока*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    border: 3px solid rgb(73, 72, 72);
+    width: 400px;
+    padding: 0 5px 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+    
+.title{
+    display: flex;
+}
+    
+.bayanBlock__item__title{ /*Заголовок блоков*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-family: 'Acme', sans-serif;  
+    font-weight: 400;
+    font-size: 25px; 
+    
+    cursor: pointer;
+}
+    
+
+/* Показ скрытого контента */
+
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__img {
+    display: block; 
+} /*Показ контента при нажатии*/ 
+
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__title{ /*изменение цвета шрифта при раскрытии блока*/
+    color:rgb(80, 149, 240);
+} 
+
+.bayanBlock:hover
+.icon{
+    opacity: 1;
+    transition: opacity 0.2s;
+} 
+
+.bayanBlock__item__input:checked ~.bayanBlock__item__title >.icon{
+   transform: rotate(45deg);  
+}
+
+.bayanBlock__item__input:hover ~.bayanBlock__item__title >.icon{
+    transform: rotate(45deg);  
+ }
+
+.mem:active{
+   opacity: 0.3;
+   transition: opasity 0.5s;
+}
+
+.bayanBlock__item:hover>.bayanBlock__item__img{
+    display: block;
+}
+
+.bayanBlock__item__input:checked ~.mem{
+
+}
+
+} 
+
+
+@media screen and (min-width:600px) and (max-width:819) {
+  
+.bayan__title{ /*Главный заголовок*/
+    display: flex;
+    align-items: center;
+    
+    font-family: 'Fredoka One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 15px;
+    
+    color: #fef722;
+}
+
+.bayanBlock__item{/*Элементы блока*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    border: 3px solid rgb(73, 72, 72);
+    width: 400px;
+    padding: 0 5px 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+    
+.title{
+    display: flex;
+}
+    
+.bayanBlock__item__title{ /*Заголовок блоков*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-family: 'Acme', sans-serif;  
+    font-weight: 400;
+    font-size: 25px; 
+    
+    cursor: pointer;
+}
+
+.icon{ /*плюс*/
+    opacity: 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    transform: rotate( 0deg);
+}
+
+}
+
+
+@media screen and (min-width:300px) and (max-width:599px) {
+  
+.bayan__title{ /*Главный заголовок*/
+    display: flex;
+    align-items: center;
+        
+    font-family: 'Fredoka One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 15px;
+        
+    color: #fef722;
+}
+    
+.bayanBlock{ /*Блок со всем содержимым*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+    width: 270px;
+    background: white;
+    border: 5px solid black;
+    border-radius: 30px;
+    padding: 20px;
+}
+    
+.bayanBlock__item{/*Элементы блока*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        
+    border: 3px solid rgb(73, 72, 72);
+    width: 210px;
+    padding: 0 5px 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+        
+        
+.bayanBlock__item__title{ /*Заголовок блоков*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+        
+    font-family: 'Acme', sans-serif;  
+    font-weight: 400;
+    font-size: 12px; 
+        
+    cursor: pointer;
+}
+    
+    .icon{ /*плюс*/
+    opacity: 0;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    transform: rotate( 0deg);
+}
+
+.bayanBlock__item__img{/*Мем блок*/
+    display: none;
+    text-align: center;
+    cursor: pointer;
+    width: 210px;
+    height: 100px;
+}
+
+.mem{ /*мем фото*/
+    width: 100px;
+    height: 100px;
+}
+
+.bayanBlock__item__input:checked~.bayanBlock__item__img {
+    opacity: 1;
+    height: 100px;
+}
+
+.bayanBlock__item__input:hover~.bayanBlock__item__img {
+    opacity: 1;
+    height: 100px;
+}
+
+
+}
