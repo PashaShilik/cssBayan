@@ -98,13 +98,15 @@ p{
 }
 
 .bayanBlock__item__img{/*Мем блок*/
-    display: none;
     text-align: center;
-    cursor: pointer;
+    overflow: hidden;
+    height: 0;
+    transition: .7s;
+    opacity: 0;
 }
 
 .mem{ /*мем фото*/
-    height: 0;
+    height: 200px;
 }
 
 /* Показ скрытого контента */
@@ -143,14 +145,14 @@ p{
     
 }
 
-.bayanBlock__item__title:hover ~.bayanBlock__item__img> .mem{
+.bayanBlock__item__input:checked~.bayanBlock__item__img {
+    opacity: 1;
     height: 200px;
-    transition: 1s;
 }
 
-.bayanBlock__item__img:hover> .mem{
-    max-height: 00px;
-    transition: 1s;
+.bayanBlock__item__input:hover~.bayanBlock__item__img {
+    opacity: 1;
+    height: 200px;
 }
 
 
@@ -320,7 +322,6 @@ p{
     padding: 0 5px 5px 10px;
     border-radius: 10px;
     margin-bottom: 10px;
-    /* gi */
 }
         
         
@@ -359,15 +360,15 @@ p{
     height: 100px;
 }
 
-
-.bayanBlock__item__title:hover ~.bayanBlock__item__img> .mem{
+.bayanBlock__item__input:checked~.bayanBlock__item__img {
+    opacity: 1;
     height: 100px;
-    transition: 1s;
 }
 
-.bayanBlock__item__img:hover> .mem{
+.bayanBlock__item__input:hover~.bayanBlock__item__img {
+    opacity: 1;
     height: 100px;
-    transition: 1s;
 }
+
 
 }
